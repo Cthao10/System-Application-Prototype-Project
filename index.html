@@ -4,53 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Playmate Sock Dolls</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to external stylesheet -->
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Welcome to Your Playmate Sock Dolls</h1>
+        <div class="logo">
+            <h1>Your Playmate Sock Dolls</h1> <!-- Logo of the website -->
+        </div>
+        <!-- Navigation Menu -->
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="cart.html">Shopping Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="index.html">Home</a></li> <!-- Home page link -->
+                <li><a href="about.html">About Us</a></li> <!-- About Us page link -->
+                <!-- Dropdown menu for Products -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Products</a> <!-- Dropdown button -->
+                    <div class="dropdown-content">
+                        <a href="cart.html">Shopping Cart</a> <!-- Shopping Cart page link -->
+                        <a href="checkout.html">Checkout</a> <!-- Checkout page link -->
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li> <!-- Login page link -->
+                <li><a href="register.html">Register</a></li> <!-- Register page link -->
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section for Branding and Introduction -->
     <section class="hero">
-        <h2>Handcrafted Sock Dolls for Children in Need</h2>
-        <p>Bringing comfort and joy to kids with serious illnesses.</p>
+        <h2>Handcrafted Sock Dolls for Children in Need</h2> <!-- Tagline -->
+        <p>Bringing comfort and joy to kids with serious illnesses.</p> <!-- Mission statement -->
+        <button onclick="window.location.href='cart.html'">Shop Now</button> <!-- Button to navigate to cart page -->
     </section>
 
+    <!-- Product Section showcasing featured items -->
     <section class="product-section">
-        <h3>Our Products</h3>
+        <h3>Featured Products</h3>
         <div class="product">
-            <img src="images/sock-doll1.jpg" alt="Sock Doll 1">
-            <p>Soft Sock Doll</p>
-            <button>Add to Cart</button>
+            <img src="images/sock-doll1.jpg" alt="Sock Doll 1"> <!-- Product image -->
+            <p>Soft Sock Doll</p> <!-- Product description -->
+            <button>Add to Cart</button> <!-- Button to add item to the shopping cart -->
         </div>
         <div class="product">
-            <img src="images/sock-doll2.jpg" alt="Sock Doll 2">
-            <p>Colorful Sock Doll</p>
-            <button>Add to Cart</button>
+            <img src="images/sock-doll2.jpg" alt="Sock Doll 2"> <!-- Product image -->
+            <p>Colorful Sock Doll</p> <!-- Product description -->
+            <button>Add to Cart</button> <!-- Button to add item to the shopping cart -->
         </div>
     </section>
 
-    <section class="links">
-        <a href="login.html">Returning Customer? Log in here</a>
-        <a href="register.html">New Customer? Set up your profile</a>
-    </section>
-
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Your Playmate Sock Dolls</p>
-        <a href="chat.html">Sales Support Chat</a>
+        <p>&copy; 2025 Your Playmate Sock Dolls</p> <!-- Footer copyright -->
+        <a href="chat.html">Sales Support Chat</a> <!-- Link to sales support chat -->
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script> <!-- External JavaScript file for interactions -->
 </body>
 </html>
