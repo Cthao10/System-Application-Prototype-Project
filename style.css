@@ -1,0 +1,207 @@
+/* General reset: ensures all elements are styled consistently */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and page layout */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #141414; /* Dark background color */
+    color: #fff; /* White text color for contrast */
+}
+
+/* Header and Navigation */
+header {
+    background-color: #1a1a1a; /* Slightly lighter black background for header */
+    color: #fff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow under header */
+}
+
+header .logo h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00e676; /* Vibrant green for text */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #76ff03; /* Light green for hover effect */
+}
+
+/* Dropdown styles: dropdown menu for Products */
+nav ul li.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 200px;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown when hovering over the menu */
+}
+
+nav ul li.dropdown .dropdown-content a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 1.1em;
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #00e676; /* Green background for hover in dropdown */
+}
+
+/* Hero Section with Green and Black */
+.hero {
+    background-color: #00e676; /* Vibrant green background for the hero section */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 60px 20px;
+    margin: 20px 0;
+}
+
+.hero h2 {
+    font-size: 3em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #1a1a1a; /* Dark button color */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background-color: #00e676; /* Light green when button is hovered */
+}
+
+/* Product Section */
+.product-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.product {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #333;
+    background-color: #222; /* Dark background for product cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    border-radius: 10px; /* Rounded corners for product containers */
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #fff; /* White text for product names */
+}
+
+.product button {
+    background-color: #00e676; /* Green button for adding to cart */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #76ff03; /* Lighter green when hovered */
+}
+
+/* Hover effect for the product */
+.product:hover {
+    transform: scale(1.05); /* Slight zoom effect when hovering */
+}
+
+/* Footer Section */
+footer {
+    background-color: #1a1a1a; /* Dark footer background */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #00e676; /* Green color for footer links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #76ff03; /* Change link color to lighter green on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .product-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+}
