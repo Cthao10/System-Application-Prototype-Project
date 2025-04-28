@@ -1,0 +1,171 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background for modern look */
+    color: #fff; /* White text for contrast */
+    line-height: 1.6;
+}
+
+/* Header Section Styling */
+header {
+    background-color: #1b5e20; /* Dark green background */
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-family: 'Roboto Slab', serif;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Hover Effect for Navigation Links */
+header nav ul li a:hover {
+    color: #76ff03; /* Green on hover */
+}
+
+/* Hero Section Styling */
+.hero {
+    background-color: #66BB6A; /* Green background */
+    color: #000000; /* Black text for contrast */
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero .cta-button {
+    background-color: #1B5E20; /* Dark green button */
+    color: #FFFFFF; /* White text */
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.hero .cta-button:hover {
+    background-color: #000000; /* Darker color on hover */
+}
+
+/* Product Grid Section */
+.products {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Grid Layout for Products */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 1.2rem;
+    color: #76ff03; /* Green price color */
+    margin-bottom: 10px;
+}
+
+.product-card .cta-button {
+    background-color: #76ff03; /* Green button for add to cart */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Product Cards */
+.product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.product-card .cta-button:hover {
+    background-color: #1B5E20; /* Dark green on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1b5e20;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Footer Links */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #76ff03; /* Green on hover */
+}
