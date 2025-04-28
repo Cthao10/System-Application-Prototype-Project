@@ -1,0 +1,110 @@
+/* General Reset: Applies uniform box-sizing and removes default margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling: Set background, text color, and font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #000000; /* Dark background */
+    color: #FFFFFF; /* White text */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Header Styling */
+header {
+    background-color: #1B5E20; /* Dark green background for header */
+    padding: 1rem; /* Padding around the header */
+}
+
+header .logo h1 {
+    color: #FFFFFF; /* White text for the logo */
+    text-align: center; /* Centering the logo text */
+    font-family: 'Roboto Slab', serif; /* A serif font for the logo */
+}
+
+/* Navigation Styling */
+header .nav-links {
+    display: flex; /* Use flexbox for the navigation links */
+    justify-content: center; /* Centering the navigation links */
+    list-style: none; /* Removing bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+header .nav-links li {
+    margin: 0 1rem; /* Horizontal spacing between navigation items */
+}
+
+header .nav-links a {
+    color: #FFFFFF; /* White color for navigation links */
+    text-decoration: none; /* Removing underline */
+    font-weight: bold; /* Making the links bold */
+    text-transform: uppercase; /* Transforming text to uppercase */
+}
+
+/* Hover Effect for Navigation Links */
+header .nav-links a:hover {
+    color: #76ff03; /* Light green color on hover */
+}
+
+/* Hero Section Styling */
+.hero {
+    background-color: #66BB6A; /* Vibrant green background */
+    color: #000000; /* Black text for contrast */
+    text-align: center; /* Centering the content */
+    padding: 2rem; /* Adding padding around the hero section */
+}
+
+.hero h2 {
+    font-size: 3rem; /* Larger text for the main heading */
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+.hero p {
+    font-size: 1.2rem; /* Slightly larger font for the description */
+    margin-bottom: 1.5rem; /* Space below the description */
+}
+
+.hero .cta-button {
+    background-color: #1B5E20; /* Dark green background for the button */
+    color: #FFFFFF; /* White text for the button */
+    padding: 0.8rem 2rem; /* Padding inside the button */
+    text-decoration: none; /* Removing text underline */
+    font-weight: bold; /* Making the button text bold */
+    border-radius: 30px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Button Hover Effect */
+.hero .cta-button:hover {
+    background-color: #000000; /* Black background when hovered */
+}
+
+/* Products Section Styling */
+.products {
+    padding: 2rem; /* Padding for the products section */
+    text-align: center; /* Centering the products section content */
+}
+
+.products h3 {
+    font-size: 2rem; /* Larger font size for the section heading */
+    margin-bottom: 2rem; /* Space below the heading */
+}
+
+/* Grid Layout for Product Cards */
+.product-grid {
+    display: grid; /* Using CSS Grid to layout product cards */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto-layout with min-max column width */
+    gap: 2rem; /* Gap between product cards */
+    justify-items: center; /* Center the grid items */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1B5E20; /* Dark green background for the footer */
+    color: #FFFFFF; /* White text for the footer */
+    text-align: center; /* Centering the footer content */
+    padding: 1rem; /* Padding around the footer */
+}
