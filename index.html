@@ -11,38 +11,48 @@
 
     <!-- Header Section -->
     <header id="home">
-        
+        <h1>Modern Website</h1>
         <div class="logo">
             <h1>Your Playmate Sock Dolls</h1>
         </div>
         <nav>
             <a href="index.html#home">Home</a>
             <a href="about.html">About</a>
-            <a href="shop.html">Shop</a> <!-- Link to Shop page -->
+            <a href="shop.html">Shop</a>
             <a href="cart.html">Cart</a>
             <a href="checkout.html">Checkout</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="login.html">Login</a> <!-- Login link for returning customers -->
+            <a href="contact.html">Contact Us</a> <!-- Contact Us link -->
         </nav>
     </header>
 
-    <!-- Home Section -->
-    <section id="home">
+    <!-- Home Section with Quick Product Query and Cart -->
+    <section id="home" style="padding: 50px 0;">
         <div class="container">
             <h2>Welcome to Your Playmate Sock Dolls</h2>
-            <p>Explore our unique collection of handmade sock dolls.</p>
-        </div>
-    </section>
+            <p>Explore our unique collection of handmade sock dolls. Perfect for children who need a little extra joy in their lives.</p>
 
-    <!-- Contact Section -->
-    <section id="contact" style="padding: 50px 0;">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <!-- Amazon-like product query interface -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search for a Sock Doll..." />
+                <button>Search</button>
+            </div>
+
+            <!-- Add Shopping Cart Information -->
+            <div class="shopping-cart-info">
+                <a href="cart.html">View Cart</a>
+                <p>Items in Cart: 3</p> <!-- Example, dynamically update this -->
+            </div>
+
+            <!-- Sales Support Specialist Chat -->
+            <div class="sales-chat">
+                <a href="#" class="chat-link">Chat with Sales Support</a> <!-- Chat link -->
+            </div>
+
+            <!-- Sales Support Phone Number -->
+            <div class="phone-support">
+                <p>Need help? Call us at <a href="tel:+1800XXXXXX">1-800-XXXXXX</a></p>
+            </div>
         </div>
     </section>
 
