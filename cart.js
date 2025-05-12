@@ -7,7 +7,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 function addToCart(event) {
     const product = event.target.getAttribute('data-product');
     const price = event.target.getAttribute('data-price');
-    const image = event.target.getAttribute('data-image');
+    const image = event.target.getAttribute('data-image'); // Raw GitHub URL
 
     // Create a cart item object
     const cartItem = {
@@ -47,7 +47,7 @@ function displayCart() {
         cart.forEach(item => {
             const cartItemHTML = `
                 <div class="cart-item">
-                    <img src="${item.image}" alt="${item.product}" />
+                    <img src="${item.image}" alt="${item.product}" class="cart-item-image" />
                     <div>
                         <p>${item.product}</p>
                         <p>Price: $${item.price}</p>
