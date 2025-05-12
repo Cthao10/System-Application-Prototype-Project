@@ -1,35 +1,25 @@
-// Function to validate the checkout form
-function validateCheckoutForm() {
-    const name = document.getElementById('name').value;
-    const address = document.getElementById('address').value;
-    const email = document.getElementById('email').value;
-    const creditCard = document.getElementById('credit-card').value;
-    const expDate = document.getElementById('exp-date').value;
-    const cvv = document.getElementById('cvv').value;
+document.addEventListener("DOMContentLoaded", function() {
+    // Get cart items from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const checkoutContainer = document.getElementById('checkout-items');
 
-    if (!name || !address || !email || !creditCard || !expDate || !cvv) {
-        alert('All fields are required!');
-        return false;
-    }
-
-    return true;
-}
-
-// Event listener for form submission
-document.getElementById('checkout-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (validateCheckoutForm()) {
-        alert('Order placed successfully!');
-        window.location.href = 'thank_you.html';
+    if (cart.length === 0) {
+        checkoutContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+        checkoutContainer.innerHTML = '';
+        cart.forEach(item => {
+            const checkoutItemHTML = `
+                <div class="checkout-item">
+                    <img src="${item.image}" alt="${item.product}" class="checkout-item-image" />
+                    <div>
+                        <p>${item.product}</p>
+                        <p>Price: $${item.price}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                        <p>Total: $${item.price * item.quantity}</p> <!-- Total for this item -->
+                    </div>
+                </div>
+            `;
+            checkoutContainer.innerHTML += checkoutItemHTML;
+        });
     }
 });
-
-// Update total during checkout
-function updateCheckoutTotal() {
-    const subtotal = parseFloat(document.getElementById('subtotal').innerText.replace('$', ''));
-    const shipping = 5.00;
-    const total = subtotal + shipping;
-    document.getElementById('total').innerText = `$${total.toFixed(2)}`;
-}
-
-document.addEventListener('DOMContentLoaded', updateCheckoutTotal);
