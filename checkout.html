@@ -38,10 +38,10 @@
                 <input type="text" id="card-name" name="card-name" required>
 
                 <label for="card-number">Card Number:</label>
-                <input type="text" id="card-number" name="card-number" required>
+                <input type="text" id="card-number" name="card-number" pattern="\d{16}" maxlength="16" placeholder="1234 5678 1234 5678" required>
 
                 <label for="expiry-date">Expiration Date (MM/YY):</label>
-                <input type="text" id="expiry-date" name="expiry-date" required>
+                <input type="text" id="expiry-date" name="expiry-date" pattern="\d{2}/\d{2}" maxlength="5" placeholder="MM/YY" required>
 
                 <button type="submit">Complete Purchase</button>
             </form>
