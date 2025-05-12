@@ -34,6 +34,17 @@ function processPurchase(event) {
     const cardNumber = document.getElementById("card-number").value;
     const expiryDate = document.getElementById("expiry-date").value;
 
+    // Validate card number and expiry date
+    if (!/^\d{16}$/.test(cardNumber)) {
+        alert("Please enter a valid 16-digit card number.");
+        return;
+    }
+
+    if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
+        alert("Please enter a valid expiration date in MM/YY format.");
+        return;
+    }
+
     // Get the cart data from localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
