@@ -10,17 +10,17 @@
 <body>
 
     <!-- Header Section -->
-    <header id="checkout">
+    <header id="home">
         <div class="logo">
             <h1>Your Playmate Sock Dolls</h1>
         </div>
         <nav>
             <a href="index.html#home">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#shop">Shop</a>
+            <a href="about.html">About</a>
+            <a href="shop.html">Shop</a>
             <a href="cart.html">Cart</a>
-            <a href="checkout.html">Checkout</a> <!-- Active link to Checkout -->
-            <a href="index.html#contact">Contact</a>
+            <a href="checkout.html">Checkout</a> <!-- Current Page -->
+            <a href="contact.html">Contact Us</a>
         </nav>
     </header>
 
@@ -28,34 +28,23 @@
     <section id="checkout" style="padding: 50px 0;">
         <div class="container">
             <h2>Checkout</h2>
-            
-            <!-- Billing Information -->
-            <h3>Billing Information</h3>
-            <form>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="text" placeholder="Shipping Address" required>
-                <input type="text" placeholder="City" required>
-                <input type="text" placeholder="Postal Code" required>
-                <input type="text" placeholder="Country" required>
+
+            <!-- Checkout Cart Items -->
+            <div id="checkout-items"></div>
+
+            <!-- Checkout Form (simulated for now) -->
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="payment">Payment Info:</label>
+                <input type="text" id="payment" name="payment" required>
+
+                <button type="submit">Complete Purchase</button>
             </form>
-            
-            <!-- Payment Information -->
-            <h3>Payment Information</h3>
-            <form>
-                <input type="text" placeholder="Credit Card Number" required>
-                <input type="text" placeholder="Expiration Date" required>
-                <input type="text" placeholder="CVV" required>
-            </form>
-            
-            <!-- Checkout Summary -->
-            <div class="checkout-summary">
-                <h3>Order Summary</h3>
-                <p><strong>Subtotal:</strong> $45.00</p>
-                <p><strong>Shipping:</strong> $5.00</p>
-                <p><strong>Total:</strong> $50.00</p>
-                <button class="checkout-btn" onclick="alert('Order Submitted!')">Complete Purchase</button>
-            </div>
         </div>
     </section>
 
@@ -65,6 +54,8 @@
         <a href="#privacy-policy">Privacy Policy</a>
         <a href="#terms-of-service">Terms of Service</a>
     </footer>
+
+    <script src="checkout.js"></script> <!-- Link to checkout.js script -->
 
 </body>
 </html>
