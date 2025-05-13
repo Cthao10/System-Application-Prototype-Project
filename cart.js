@@ -1,42 +1,6 @@
-// Add event listeners to all "Add to Cart" buttons
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', addToCart);
-});
-
-// Function to add item to the cart (stored in localStorage)
-function addToCart(event) {
-    const product = event.target.getAttribute('data-product');
-    const price = event.target.getAttribute('data-price');
-    const image = event.target.getAttribute('data-image'); // Raw GitHub URL
-
-    // Create a cart item object
-    const cartItem = {
-        product: product,
-        price: price,
-        image: image,
-        quantity: 1
-    };
-
-    // Get the current cart items from localStorage or initialize an empty cart
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Check if the product is already in the cart
-    const existingItemIndex = cart.findIndex(item => item.product === product);
-    
-    if (existingItemIndex !== -1) {
-        // If item already exists in cart, update the quantity
-        cart[existingItemIndex].quantity += 1;
-    } else {
-        // If item doesn't exist, add it to the cart
-        cart.push(cartItem);
-    }
-
-    // Save the updated cart to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-// Function to display the cart items in the Cart page
-function displayCart() {
+// Wait for the DOM to load before executing the script
+document.addEventListener("DOMContentLoaded", function() {
+    // Get cart items from localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.getElementById('cart-items');
 
@@ -51,7 +15,13 @@ function displayCart() {
                     <div>
                         <p>${item.product}</p>
                         <p>Price: $${item.price}</p>
-                        <p>Quantity: ${item.quantity}</p>
+                        <p>Quantity: 
+                            <input type="number" class="quantity-input" 
+                                value="${item.quantity}" 
+                                min="1" 
+                                data-product="${item.product}" />
+                        </p>
+                        <p>Total: $${item.price * item.quantity}</p> <!-- Total for this item -->
                     </div>
                     <button class="remove-from-cart" data-product="${item.product}">Remove</button>
                 </div>
@@ -59,11 +29,39 @@ function displayCart() {
             cartContainer.innerHTML += cartItemHTML;
         });
 
-        // Add event listeners to the "Remove" buttons
+        // Add event listeners to the quantity input and remove buttons
+        document.querySelectorAll('.quantity-input').forEach(input => {
+            input.addEventListener('change', updateQuantity);
+        });
         document.querySelectorAll('.remove-from-cart').forEach(button => {
             button.addEventListener('click', removeFromCart);
         });
     }
+
+    // Update the cart total price
+    updateCartTotal();
+});
+
+// Function to update the quantity of an item in the cart
+function updateQuantity(event) {
+    const product = event.target.getAttribute('data-product');
+    const newQuantity = parseInt(event.target.value);
+
+    if (newQuantity < 1) {
+        alert("Quantity must be at least 1");
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const itemIndex = cart.findIndex(item => item.product === product);
+    
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity = newQuantity;
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Re-render the cart
+    location.reload();
 }
 
 // Function to remove item from the cart
@@ -79,10 +77,15 @@ function removeFromCart(event) {
     localStorage.setItem('cart', JSON.stringify(cart));
 
     // Re-render the cart page after removal
-    displayCart();
+    location.reload();
 }
 
-// Display the cart when the page loads
-if (document.getElementById('cart-items')) {
-    displayCart();
+// Function to update the cart total price (sum of all products)
+function updateCartTotal() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalContainer = document.getElementById('total-amount');
+
+    const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+    totalContainer.innerHTML = `<p><strong>Total Amount: $${totalAmount.toFixed(2)}</strong></p>`;
 }
