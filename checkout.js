@@ -3,12 +3,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get cart items from localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const checkoutContainer = document.getElementById('checkout-items');
+    const totalAmountContainer = document.getElementById('total-amount');
 
     if (cart.length === 0) {
         checkoutContainer.innerHTML = '<p>Your cart is empty.</p>';
+        totalAmountContainer.innerHTML = '<p>No items in cart.</p>';
     } else {
         checkoutContainer.innerHTML = '';
+        let totalAmount = 0;
         cart.forEach(item => {
+            const itemTotal = item.price * item.quantity; // Calculate total for this item
+            totalAmount += itemTotal; // Add to the total
+
             const checkoutItemHTML = `
                 <div class="checkout-item">
                     <img src="${item.image}" alt="${item.product}" class="checkout-item-image" />
@@ -16,12 +22,15 @@ document.addEventListener("DOMContentLoaded", function() {
                         <p>${item.product}</p>
                         <p>Price: $${item.price}</p>
                         <p>Quantity: ${item.quantity}</p>
-                        <p>Total: $${item.price * item.quantity}</p> <!-- Total for this item -->
+                        <p>Total: $${itemTotal}</p> <!-- Total for this item -->
                     </div>
                 </div>
             `;
             checkoutContainer.innerHTML += checkoutItemHTML;
         });
+
+        // Display the total amount for the entire cart
+        totalAmountContainer.innerHTML = `<p><strong>Total Amount: $${totalAmount.toFixed(2)}</strong></p>`;
     }
 });
 
@@ -54,13 +63,16 @@ function processPurchase(event) {
         return;
     }
 
+    // Calculate the total price for the purchase
+    const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
     // Simulate payment processing (since this is for school, we just store the details in localStorage)
     const purchaseDetails = {
         cardName: cardName,
         cardNumber: cardNumber,  // In a real app, you should never store sensitive data like card numbers
         expiryDate: expiryDate,
         cart: cart,
-        total: cart.reduce((total, item) => total + (item.price * item.quantity), 0),
+        total: totalAmount,
         date: new Date().toLocaleString()
     };
 
