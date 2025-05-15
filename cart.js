@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.getElementById('cart-items');
 
+    // Check if the cart is empty
     if (cart.length === 0) {
         cartContainer.innerHTML = '<p>Your cart is empty.</p>';
     } else {
@@ -56,7 +57,7 @@ function updateQuantity(event) {
     const itemIndex = cart.findIndex(item => item.product === product);
     
     if (itemIndex !== -1) {
-        cart[itemIndex].quantity = newQuantity;
+        cart[itemIndex].quantity = newQuantity; // Update quantity
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 
